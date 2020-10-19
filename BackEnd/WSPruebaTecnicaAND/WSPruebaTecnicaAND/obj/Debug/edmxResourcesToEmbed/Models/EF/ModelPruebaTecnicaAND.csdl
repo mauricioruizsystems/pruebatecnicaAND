@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaTecnicaANDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cuentanos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idopinion" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Opinion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="entidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtrosTemas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subtitulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="enlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tramites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="entidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="disponiblelinea" Type="Boolean" Nullable="false" />
+    <Property Name="concosto" Type="Boolean" Nullable="false" />
+    <Property Name="detalletramite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PruebaTecnicaANDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cuentanos" EntityType="Self.Cuentanos" />
+    <EntitySet Name="Opinion" EntityType="Self.Opinion" />
+    <EntitySet Name="OtrosTemas" EntityType="Self.OtrosTemas" />
+    <EntitySet Name="Tramites" EntityType="Self.Tramites" />
+    <FunctionImport Name="SP_LIST_TRAMITES" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_TRAMITES_Result)" />
+    <FunctionImport Name="SP_LIST_CUENTANOS" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_CUENTANOS_Result)" />
+    <FunctionImport Name="SP_LIST_OPINION" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_OPINION_Result)" />
+    <FunctionImport Name="SP_LIST_OTROSTEMAS" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_OTROSTEMAS_Result)" />
+  </EntityContainer>
+  <ComplexType Name="SP_LIST_TRAMITES_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" />
+    <Property Type="String" Name="entidad" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="disponiblelinea" Nullable="false" />
+    <Property Type="Boolean" Name="concosto" Nullable="false" />
+    <Property Type="String" Name="detalletramite" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_CUENTANOS_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idopinion" Nullable="false" />
+    <Property Type="String" Name="descripcion" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_OPINION_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="estado" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" />
+    <Property Type="String" Name="entidad" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_LIST_OTROSTEMAS_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="titulo" Nullable="false" />
+    <Property Type="String" Name="subtitulo" Nullable="false" />
+    <Property Type="String" Name="enlace" Nullable="false" />
+    <Property Type="String" Name="imagen" Nullable="false" />
+  </ComplexType>
+</Schema>

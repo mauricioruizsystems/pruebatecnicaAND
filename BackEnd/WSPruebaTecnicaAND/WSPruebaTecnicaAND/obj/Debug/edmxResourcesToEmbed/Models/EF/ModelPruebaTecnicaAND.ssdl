@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaTecnicaANDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cuentanos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idopinion" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Opinion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="entidad" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtrosTemas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="subtitulo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="enlace" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="imagen" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tramites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="entidad" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="disponiblelinea" Type="bit" Nullable="false" />
+    <Property Name="concosto" Type="bit" Nullable="false" />
+    <Property Name="detalletramite" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Function Name="SP_LIST_CUENTANOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_OPINION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_OTROSTEMAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LIST_TRAMITES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="PruebaTecnicaANDModelStoreContainer">
+    <EntitySet Name="Cuentanos" EntityType="Self.Cuentanos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Opinion" EntityType="Self.Opinion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtrosTemas" EntityType="Self.OtrosTemas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tramites" EntityType="Self.Tramites" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

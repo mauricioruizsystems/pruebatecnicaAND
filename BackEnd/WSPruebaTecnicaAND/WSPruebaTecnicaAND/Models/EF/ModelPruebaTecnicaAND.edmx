@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PruebaTecnicaANDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cuentanos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idopinion" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Opinion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="entidad" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtrosTemas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="titulo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="subtitulo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="enlace" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="imagen" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tramites">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="entidad" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="disponiblelinea" Type="bit" Nullable="false" />
+          <Property Name="concosto" Type="bit" Nullable="false" />
+          <Property Name="detalletramite" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Function Name="SP_LIST_CUENTANOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_LIST_OPINION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_LIST_OTROSTEMAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_LIST_TRAMITES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="PruebaTecnicaANDModelStoreContainer">
+          <EntitySet Name="Cuentanos" EntityType="Self.Cuentanos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opinion" EntityType="Self.Opinion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtrosTemas" EntityType="Self.OtrosTemas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tramites" EntityType="Self.Tramites" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PruebaTecnicaANDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cuentanos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idopinion" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Opinion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="entidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtrosTemas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="subtitulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="enlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tramites">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="entidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="disponiblelinea" Type="Boolean" Nullable="false" />
+          <Property Name="concosto" Type="Boolean" Nullable="false" />
+          <Property Name="detalletramite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PruebaTecnicaANDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentanos" EntityType="Self.Cuentanos" />
+          <EntitySet Name="Opinion" EntityType="Self.Opinion" />
+          <EntitySet Name="OtrosTemas" EntityType="Self.OtrosTemas" />
+          <EntitySet Name="Tramites" EntityType="Self.Tramites" />
+          <FunctionImport Name="SP_LIST_TRAMITES" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_TRAMITES_Result)" />
+          <FunctionImport Name="SP_LIST_CUENTANOS" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_CUENTANOS_Result)" />
+          <FunctionImport Name="SP_LIST_OPINION" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_OPINION_Result)" />
+          <FunctionImport Name="SP_LIST_OTROSTEMAS" ReturnType="Collection(PruebaTecnicaANDModel.SP_LIST_OTROSTEMAS_Result)" />
+        </EntityContainer>
+        <ComplexType Name="SP_LIST_TRAMITES_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" />
+          <Property Type="String" Name="entidad" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="disponiblelinea" Nullable="false" />
+          <Property Type="Boolean" Name="concosto" Nullable="false" />
+          <Property Type="String" Name="detalletramite" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_CUENTANOS_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="idopinion" Nullable="false" />
+          <Property Type="String" Name="descripcion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_OPINION_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="estado" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" />
+          <Property Type="String" Name="entidad" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SP_LIST_OTROSTEMAS_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="enlace" Nullable="false" />
+          <Property Type="String" Name="imagen" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PruebaTecnicaANDModelStoreContainer" CdmEntityContainer="PruebaTecnicaANDEntities">
+          <EntitySetMapping Name="Cuentanos">
+            <EntityTypeMapping TypeName="PruebaTecnicaANDModel.Cuentanos">
+              <MappingFragment StoreEntitySet="Cuentanos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idopinion" ColumnName="idopinion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opinion">
+            <EntityTypeMapping TypeName="PruebaTecnicaANDModel.Opinion">
+              <MappingFragment StoreEntitySet="Opinion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="entidad" ColumnName="entidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtrosTemas">
+            <EntityTypeMapping TypeName="PruebaTecnicaANDModel.OtrosTemas">
+              <MappingFragment StoreEntitySet="OtrosTemas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="enlace" ColumnName="enlace" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tramites">
+            <EntityTypeMapping TypeName="PruebaTecnicaANDModel.Tramites">
+              <MappingFragment StoreEntitySet="Tramites">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="entidad" ColumnName="entidad" />
+                <ScalarProperty Name="disponiblelinea" ColumnName="disponiblelinea" />
+                <ScalarProperty Name="concosto" ColumnName="concosto" />
+                <ScalarProperty Name="detalletramite" ColumnName="detalletramite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_LIST_TRAMITES" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_TRAMITES">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_TRAMITES_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="entidad" ColumnName="entidad" />
+                <ScalarProperty Name="disponiblelinea" ColumnName="disponiblelinea" />
+                <ScalarProperty Name="concosto" ColumnName="concosto" />
+                <ScalarProperty Name="detalletramite" ColumnName="detalletramite" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LIST_CUENTANOS" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_CUENTANOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_CUENTANOS_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idopinion" ColumnName="idopinion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LIST_OPINION" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_OPINION">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_OPINION_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="entidad" ColumnName="entidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LIST_OTROSTEMAS" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_OTROSTEMAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_OTROSTEMAS_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="enlace" ColumnName="enlace" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

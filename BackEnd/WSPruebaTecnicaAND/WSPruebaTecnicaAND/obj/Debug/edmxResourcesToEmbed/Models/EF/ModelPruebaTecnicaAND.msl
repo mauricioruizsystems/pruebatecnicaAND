@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PruebaTecnicaANDModelStoreContainer" CdmEntityContainer="PruebaTecnicaANDEntities">
+    <EntitySetMapping Name="Cuentanos">
+      <EntityTypeMapping TypeName="PruebaTecnicaANDModel.Cuentanos">
+        <MappingFragment StoreEntitySet="Cuentanos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idopinion" ColumnName="idopinion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opinion">
+      <EntityTypeMapping TypeName="PruebaTecnicaANDModel.Opinion">
+        <MappingFragment StoreEntitySet="Opinion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtrosTemas">
+      <EntityTypeMapping TypeName="PruebaTecnicaANDModel.OtrosTemas">
+        <MappingFragment StoreEntitySet="OtrosTemas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+          <ScalarProperty Name="enlace" ColumnName="enlace" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tramites">
+      <EntityTypeMapping TypeName="PruebaTecnicaANDModel.Tramites">
+        <MappingFragment StoreEntitySet="Tramites">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+          <ScalarProperty Name="disponiblelinea" ColumnName="disponiblelinea" />
+          <ScalarProperty Name="concosto" ColumnName="concosto" />
+          <ScalarProperty Name="detalletramite" ColumnName="detalletramite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_TRAMITES" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_TRAMITES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_TRAMITES_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+          <ScalarProperty Name="disponiblelinea" ColumnName="disponiblelinea" />
+          <ScalarProperty Name="concosto" ColumnName="concosto" />
+          <ScalarProperty Name="detalletramite" ColumnName="detalletramite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_CUENTANOS" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_CUENTANOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_CUENTANOS_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idopinion" ColumnName="idopinion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_OPINION" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_OPINION">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_OPINION_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_OTROSTEMAS" FunctionName="PruebaTecnicaANDModel.Store.SP_LIST_OTROSTEMAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebaTecnicaANDModel.SP_LIST_OTROSTEMAS_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+          <ScalarProperty Name="enlace" ColumnName="enlace" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
